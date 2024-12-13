@@ -2,9 +2,12 @@ import './Button.css';
 
 function Button() {
 
+	const saveFunc = () => {
+		console.log('saved');
+	};
 
 	return (
-		<button className='button accent'>Save</button>
+		<button onClick = {saveFunc} className='button accent'>Save</button>
 	);
 }
 
