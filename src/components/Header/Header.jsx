@@ -4,7 +4,7 @@ function Header() {
 
 
 	return (
-		<>logo</>
+		<img className='logo' src='/logo.svg' alt='Логотип журала'/>
 	);
 }
 
