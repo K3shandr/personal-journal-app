@@ -7,6 +7,8 @@ import JournalItem from './components/JournalItem/JournalItem';
 import JournalList from './components/JournalList/JournalList';
 import Body from './layouts/Body/Body';
 import LeftPanel from './layouts/LeftPanel/LeftPanel';
+
+
 function App() {
 
 	const data = [
@@ -17,7 +19,10 @@ function App() {
 			date: new Date(),
 			text:'test text 2'},
 	];
-
+	
+ 	const inputChange = (event) => {
+		console.log(event.target.value);
+ 	};
 	return (
     
 
@@ -43,7 +48,7 @@ function App() {
 				</JournalList>
 			</LeftPanel>
 			<Body>
-                body
+				<input type='text' onChange={inputChange}/>
 			</Body>
 
 		</div>
