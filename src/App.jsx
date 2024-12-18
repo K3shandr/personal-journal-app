@@ -15,7 +15,8 @@ function App() {
 	const INITIAL_DATA = [
 		{title:'тестовый заголовок первой карточки',
 			text: 'тестовы текст первой карточки',
-			date: new Date()
+			date: new Date(),
+			id: 1,
 		}
 	];
 	const [data,setData] = useState(INITIAL_DATA);
@@ -25,7 +26,8 @@ function App() {
 		setData(oldItems => [...oldItems,{
 			text: item.text,
 			title: item.title,
-			date: new Date(item.date)
+			date: new Date(item.date),
+			id: Math.max(...oldItems.map(i=> i.id))+1
 		}]);
 	};
 	
@@ -38,7 +40,7 @@ function App() {
 				<JournalAddButton/>
 				<JournalList> 
 					{data.map(el => (
-						<CardButton>
+						<CardButton key={el.id}>
 							<JournalItem 
 								title={el.title}
 								date={el.date}
