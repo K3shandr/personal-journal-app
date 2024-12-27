@@ -51,7 +51,7 @@ function JournalForm({onSubmit}) {
 			</div>
 			<div className={styles['form-row']}>
 				<label htmlFor='date' className={styles['form-label']}>
-					<img className={styles['calendar-icon']} src='../public/calendar.svg' alt='иконка календаря'/>
+					<img className={styles['calendar-icon']} src='/calendar.svg' alt='иконка календаря'/>
 					<span>Дата</span>
 				</label>
 				<input type='date' name='date' id='date' className={cn(styles.input,{
@@ -60,7 +60,7 @@ function JournalForm({onSubmit}) {
 			</div>
 			<div className={styles['form-row']}>
 				<label htmlFor='tag' className={styles['form-label']}>
-					<img className={styles['folder-icon']} src='./public/folder.svg' alt='Иконка папки' />
+					<img className={styles['folder-icon']} src='/folder.svg' alt='Иконка папки' />
 					<span>Метки</span>
 				</label>
 				<input type='text' id='tag' name='tag' className={styles.input}/>

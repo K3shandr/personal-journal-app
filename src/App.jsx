@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import JournalAddButton from './components/JournalAddButton/JournalAddButton';
@@ -10,11 +10,17 @@ import LeftPanel from './layouts/LeftPanel/LeftPanel';
 
 function App() {
 
-	const INITIAL_DATA = [
-	
-	];
-	const [data,setData] = useState(INITIAL_DATA);
+	const [data,setData] = useState([]);
 
+	useEffect(() => {
+		const dataFromLocal = JSON.parse(localStorage.getItem('Data'))
+
+		if (dataFromLocal) {
+			setData(dataFromLocal.map(item => ({
+				...item,date: new Date(item.date),
+			})))
+		};
+	},[]);
 
 	const addItem = item => {
 		setData(oldItems => [...oldItems,{
@@ -25,7 +31,6 @@ function App() {
 		}]);
 	};
 	
-
 	return (
     
 
