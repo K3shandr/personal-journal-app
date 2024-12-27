@@ -22,6 +22,12 @@ function App() {
 		};
 	},[]);
 
+	useEffect(()=>{
+		if (data.length){
+			localStorage.setItem('Data', JSON.stringify(data))
+		}
+	},[data]);
+
 	const addItem = item => {
 		setData(oldItems => [...oldItems,{
 			text: item.text,
@@ -30,7 +36,7 @@ function App() {
 			id: data.length == 0 ? 1 : Math.max(...oldItems.map(i=> i.id))+1
 		}]);
 	};
-	
+	console.log(data)
 	return (
     
 
